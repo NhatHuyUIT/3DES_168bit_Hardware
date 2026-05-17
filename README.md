@@ -101,20 +101,33 @@ Because of the Feistel structure, the same datapath can be reused for both encry
 
 ```text
 3DES_168bit_Hardware/
-├── DES_core.v
-├── DES_core_base.v
-├── DES_core_DeepPipe.v
-├── Tri_DES.v
-├── Tri_DES_base.v
-├── Tri_DES_DeepPipe.v
-├── tb_DES_core.v
-├── tb_DES_core_base.v
-├── tb_DES_core_DeepPipe.v
-├── tb_Tri_DES.v
-├── tb_Tri_DES_base.v
-└── tb_Tri_DES_DeepPipe.v
+├── rtl/
+│   ├── DES_core.v
+│   ├── DES_core_base.v
+│   ├── DES_core_DeepPipe.v
+│   ├── DES_deep_round.v
+│   ├── Expansion.v
+│   ├── Initial_Permutation.v
+│   ├── Inv_Initial_Permutation.v
+│   ├── Key_schedule.v
+│   ├── P_box.v
+│   ├── S_box.v
+│   ├── SP_box.v
+│   ├── Tri_DES.v
+│   ├── Tri_DES_base.v
+│   └── Tri_DES_DeepPipe.v
+│
+├── tb/
+│   ├── tb_DES_core.v
+│   ├── tb_DES_core_base.v
+│   ├── tb_DES_core_DeepPipe.v
+│   ├── tb_Tri_DES.v
+│   ├── tb_Tri_DES_base.v
+│   └── tb_Tri_DES_DeepPipe.v
+│
+├── README.md
+└── .gitignore
 ```
-
 ## File Description
 
 | File | Description |
@@ -345,7 +358,7 @@ cd 3DES_168bit_Hardware
 ### 2. Compile all Verilog files in ModelSim
 
 ```tcl
-vlog *.v
+vlog rtl/*.v tb/*.v
 ```
 
 ### 3. Run Base 3DES simulation

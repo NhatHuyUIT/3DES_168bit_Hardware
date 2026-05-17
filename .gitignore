@@ -1,0 +1,18 @@
+# ModelSim
+work/
+transcript
+*.wlf
+*.vcd
+wlft*
+
+# Quartus generated files
+db/
+incremental_db/
+output_files/
+
+# Backup files
+*.bak
+
+# Logs and temporary files
+*.log
+*.tmp
